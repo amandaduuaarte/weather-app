@@ -3,16 +3,13 @@ import {Container, Row, Text} from './styles';
 import Logo from '../../../../assets/icons/logo.svg';
 import House from '../../../../assets/icons/House.svg';
 import {Informations} from '../../components/Informations/Informations';
-import homeService from '../../services/homeApi';
+import {requestLocationPermission} from '../../services/permitions';
 
 export const Home: React.FC = () => {
-  const handle = useCallback(() => {
-    const teste = homeService.get();
-    console.log('aquii', teste);
-  }, []);
+  const handle = useCallback(() => {}, []);
 
   useEffect(() => {
-    handle();
+    requestLocationPermission();
   }, [handle]);
 
   return (
