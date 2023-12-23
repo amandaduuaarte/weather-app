@@ -29,10 +29,10 @@ export const Informations: React.FC = () => {
       </Row>
       <Header />
       <Row>
-        {tempsMock.map(item => {
+        {tempsMock.map((item, index) => {
           return (
-            <TempCard>
-              <Text size={12}>{item.temp}C</Text>
+            <TempCard key={index}>
+              <Text size={12}>{item.temp}°C</Text>
               <Logo height={64} width={64} />
               <Text size={12}>{item.hour}.00</Text>
             </TempCard>

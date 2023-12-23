@@ -8,11 +8,11 @@ export const Home: React.FC = () => {
   return (
     <Container>
       <Logo height={260} />
-      <Text bold>19</Text>
+      <Text bold>19°</Text>
       <Text size={24}>Precipitations</Text>
       <Row>
-        <Text size={16}>Max: 24</Text>
-        <Text size={16}>Min: 18</Text>
+        <Text size={16}>Max: 24°</Text>
+        <Text size={16}>Min: 18°</Text>
       </Row>
       <House height={180} />
       <Informations />
