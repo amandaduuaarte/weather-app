@@ -1,5 +1,6 @@
 import {request, PERMISSIONS} from 'react-native-permissions';
 import {Platform} from 'react-native';
+import {getLocation} from './getLocations';
 
 export const requestLocationPermission = async () => {
   try {
@@ -8,9 +9,8 @@ export const requestLocationPermission = async () => {
         ? PERMISSIONS.IOS.LOCATION_WHEN_IN_USE
         : PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION,
     ).then(result => {
-      //   setPermissionResult(result);
-      console.log('aquii', result);
       if (result === 'granted') {
+        getLocation();
         console.log('You can use Geolocation');
         return true;
       }

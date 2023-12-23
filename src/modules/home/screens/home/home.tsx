@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import {Container, Row, Text} from './styles';
 import Logo from '../../../../assets/icons/logo.svg';
 import House from '../../../../assets/icons/House.svg';
@@ -6,11 +6,9 @@ import {Informations} from '../../components/Informations/Informations';
 import {requestLocationPermission} from '../../services/permitions';
 
 export const Home: React.FC = () => {
-  const handle = useCallback(() => {}, []);
-
   useEffect(() => {
     requestLocationPermission();
-  }, [handle]);
+  }, []);
 
   return (
     <Container>

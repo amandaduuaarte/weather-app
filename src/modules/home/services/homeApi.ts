@@ -9,8 +9,6 @@ class HomeService {
   public async get() {
     try {
       const response = await axios.get(this.baseUrl);
-
-      console.log(response.data);
       return response.data;
     } catch (error) {
       console.error(error);
