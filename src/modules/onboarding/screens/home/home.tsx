@@ -10,7 +10,7 @@ export const Home: React.FC = () => {
       <Logo />
       <Text bold>Weather</Text>
       <Text color={colors.texts.primary}>ForeCasts</Text>
-      <Button />
+      <Button title="Get Start" action={() => console.log('aqio')} />
     </Container>
   );
 };

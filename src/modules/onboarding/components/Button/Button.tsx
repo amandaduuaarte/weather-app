@@ -1,10 +1,11 @@
 import React from 'react';
 import {Container, Text} from './styles';
+import {ButtonProps} from '../../interfaces/button';
 
-export const Button: React.FC = () => {
+export const Button: React.FC<ButtonProps> = ({title, action}) => {
   return (
-    <Container>
-      <Text>Get Start</Text>
+    <Container onPress={action}>
+      <Text>{title}</Text>
     </Container>
   );
 };
