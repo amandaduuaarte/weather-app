@@ -1,5 +1,5 @@
 import {API_KEY} from '../../../constants/apiKey';
-import axios from 'axios';
+import {Api} from '../../../services/api';
 
 interface GetProps {
   lat: number;
@@ -10,8 +10,8 @@ class WeatherService {
 
   public async get({lat, lon}: GetProps) {
     try {
-      const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&lang={lang}&appid=${API_KEY}&units=metric`,
+      const response = await Api.get(
+        `/onecall?lat=${lat}&lon=${lon}&lang=${this.lang}&appid=${API_KEY}&units=metric`,
       );
 
       return response.data;

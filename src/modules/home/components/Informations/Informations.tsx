@@ -14,7 +14,7 @@ export const Informations: React.FC<CurrentWeatherDay> = ({
   return (
     <Container>
       <Row>
-        <Text>Today</Text>
+        <Text>Hoje</Text>
         <Text>
           {CurrentDay}/{CurrentMonth}
         </Text>
@@ -22,6 +22,9 @@ export const Informations: React.FC<CurrentWeatherDay> = ({
 
       <Header />
       <Row>
+        <Row>
+          <Text>Semana</Text>
+        </Row>
         {!data || data.length === 0 ? (
           <Loading />
         ) : (
@@ -29,9 +32,9 @@ export const Informations: React.FC<CurrentWeatherDay> = ({
             {data.map((item, index) => {
               return (
                 <TempCard key={index}>
-                  <Text size={12}>Morn: {item.temp.morn}°C</Text>
+                  <Text size={12}>Manhã: {item.temp.morn}°C</Text>
                   <Logo height={64} width={64} />
-                  <Text size={12}>Night: {item.temp.night}°C</Text>
+                  <Text size={12}>Noite: {item.temp.night}°C</Text>
                 </TempCard>
               );
             })}

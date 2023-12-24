@@ -49,10 +49,10 @@ export const Home: React.FC = () => {
         <>
           <Text bold>{currentWeather?.temp}°C</Text>
           <Text size={24}>{currentWeather?.weather[0].description}</Text>
-          <Text size={16}>Feels Like: {currentWeather?.feels_like}°C</Text>
+          <Text size={16}>Sensação: {currentWeather?.feels_like}°C</Text>
           <Row>
-            <Text size={16}>Visibility: {currentWeather?.visibility}</Text>
-            <Text size={16}>Humidity: {currentWeather?.humidity}</Text>
+            <Text size={16}>Visibilidade: {currentWeather?.visibility}</Text>
+            <Text size={16}>Humidade: {currentWeather?.humidity}</Text>
           </Row>
           <House height={180} />
 
