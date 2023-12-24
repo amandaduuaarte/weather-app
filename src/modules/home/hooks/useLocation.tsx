@@ -7,6 +7,7 @@ import {Platform} from 'react-native';
 
 const LocationContext = createContext<LocationData>({} as LocationData);
 const LocationProvider: React.FC<ChildrenDefaultProps> = ({children}) => {
+  const [permitions, setPermissions] = useState('');
   const [location, setLocation] = useState({
     lat: 0,
     lon: 0,
@@ -37,8 +38,10 @@ const LocationProvider: React.FC<ChildrenDefaultProps> = ({children}) => {
           : PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION,
       ).then(result => {
         if (result === 'granted') {
-          getLocation();
+          setPermissions(result);
           return true;
+        } else {
+          getLocation();
         }
       });
     } catch (err) {
@@ -48,7 +51,13 @@ const LocationProvider: React.FC<ChildrenDefaultProps> = ({children}) => {
 
   return (
     <LocationContext.Provider
-      value={{location, setLocation, getLocation, requestLocationPermission}}>
+      value={{
+        location,
+        setLocation,
+        getLocation,
+        requestLocationPermission,
+        permitions,
+      }}>
       {children}
     </LocationContext.Provider>
   );
@@ -58,7 +67,7 @@ function useLocation(): LocationData {
   const context = useContext(LocationContext);
 
   if (!context) {
-    throw new Error('useLocation must be used within an CharacterProvider');
+    throw new Error('useLocation must be used within an LocationProvider');
   }
   return context;
 }

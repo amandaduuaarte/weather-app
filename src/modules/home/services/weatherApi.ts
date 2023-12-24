@@ -1,24 +1,23 @@
 import {API_KEY} from '../../../constants/apiKey';
-import axios from 'axios';
+import {Api} from '../../../services/api';
 
 interface GetProps {
   lat: number;
   lon: number;
 }
-class WeatherService {
-  lang = 'pt_br';
 
-  public async get({lat, lon}: GetProps) {
-    try {
-      const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&lang={lang}&appid=${API_KEY}&units=metric`,
-      );
+export async function getWeather({lat, lon}: GetProps) {
+  try {
+    const response = await Api.get(
+      `/onecall?lat=${lat}&lon=${lon}&lang=pt_br&appid=${API_KEY}&units=metric`,
+    );
 
-      return response.data;
-    } catch (error) {
-      console.error(error);
-    }
+    return response.data;
+  } catch (error) {
+    console.error(error);
   }
 }
 
-export default new WeatherService();
+export const ApiWeather = {
+  getWeather,
+};
