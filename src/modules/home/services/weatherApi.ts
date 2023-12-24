@@ -5,7 +5,7 @@ interface GetProps {
   lat: number;
   lon: number;
 }
-class HomeService {
+class WeatherService {
   lang = 'pt_br';
 
   public async get({lat, lon}: GetProps) {
@@ -19,10 +19,6 @@ class HomeService {
       console.error(error);
     }
   }
-
-  public getIconURL(iconName: string) {
-    return `https://openweathermap.org/img/wn/${iconName}@4x.png`;
-  }
 }
 
-export default new HomeService();
+export default new WeatherService();

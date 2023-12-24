@@ -8,22 +8,30 @@ import House from '../../../../assets/icons/House.svg';
 import {Informations} from '../../components/Informations/Informations';
 import {useLocation} from '../../hooks/useLocation';
 
-import homeApi from '../../services/homeApi';
-import {CurrentWeather} from '../../interfaces/informations';
+import WeatherService from '../../services/weatherApi';
+import {CurrentWeather, CurrentWeatherDay} from '../../interfaces/informations';
 
 export const Home: React.FC = () => {
   const [currentWeather, setCurrentWeather] = useState<CurrentWeather>();
   const {requestLocationPermission, location} = useLocation();
+  const [weatherInfoWeekDay, setWeatherInfoWeekDay] = useState<
+    CurrentWeatherDay | any
+  >([]);
 
   const handleWeatherData = useCallback(async () => {
-    const content = await homeApi.get({lat: location.lat, lon: location.lon});
+    const content = await WeatherService.get({
+      lat: location.lat,
+      lon: location.lon,
+    });
+
     if (content.current) {
       setCurrentWeather(content.current);
     }
-    console.log(content.current);
-  }, [location]);
 
-  useEffect(() => {}, [requestLocationPermission]);
+    if (content.daily) {
+      setWeatherInfoWeekDay(content.daily);
+    }
+  }, [location]);
 
   useEffect(() => {
     requestLocationPermission();
@@ -42,7 +50,8 @@ export const Home: React.FC = () => {
         <Text size={16}>Humidity: {currentWeather?.humidity}</Text>
       </Row>
       <House height={180} />
-      <Informations />
+
+      <Informations data={weatherInfoWeekDay} />
     </Container>
   );
 };

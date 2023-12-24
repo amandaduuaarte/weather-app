@@ -26,6 +26,8 @@ export const Text = styled.Text<TextProps>`
   color: ${colors.texts.white};
 `;
 
+export const Scrollbar = styled.ScrollView``;
+
 export const Row = styled.View`
   flex-flow: row;
   justify-content: space-between;
@@ -33,7 +35,7 @@ export const Row = styled.View`
 
 export const TempCard = styled.View`
   margin-top: 12px;
-  width: 25%;
+  width: 10%;
   justify-content: center;
   align-items: center;
 `;

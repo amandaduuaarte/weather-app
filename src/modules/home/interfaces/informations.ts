@@ -14,3 +14,20 @@ export interface CurrentWeather {
     main: string;
   }[];
 }
+
+export interface CurrentWeatherDay {
+  data: {
+    clouds: number;
+    temp: {
+      morn: number;
+      night: number;
+    };
+    feels_like: number;
+    visibility: number;
+    humidity: number;
+    weather: {
+      description: string;
+      main: string;
+    }[];
+  }[];
+}
