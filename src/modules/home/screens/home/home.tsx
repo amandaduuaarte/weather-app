@@ -10,6 +10,7 @@ import {useLocation} from '../../hooks/useLocation';
 
 import WeatherService from '../../services/weatherApi';
 import {CurrentWeather, CurrentWeatherDay} from '../../interfaces/informations';
+import {Loading} from '../../../../components/Loading';
 
 export const Home: React.FC = () => {
   const [currentWeather, setCurrentWeather] = useState<CurrentWeather>();
@@ -42,16 +43,22 @@ export const Home: React.FC = () => {
   return (
     <Container>
       <Logo height={260} />
-      <Text bold>{currentWeather?.temp}°C</Text>
-      <Text size={24}>{currentWeather?.weather[0].description}</Text>
-      <Text size={16}>Feels Like: {currentWeather?.feels_like}°C</Text>
-      <Row>
-        <Text size={16}>Visibility: {currentWeather?.visibility}</Text>
-        <Text size={16}>Humidity: {currentWeather?.humidity}</Text>
-      </Row>
-      <House height={180} />
+      {!currentWeather ? (
+        <Loading />
+      ) : (
+        <>
+          <Text bold>{currentWeather?.temp}°C</Text>
+          <Text size={24}>{currentWeather?.weather[0].description}</Text>
+          <Text size={16}>Feels Like: {currentWeather?.feels_like}°C</Text>
+          <Row>
+            <Text size={16}>Visibility: {currentWeather?.visibility}</Text>
+            <Text size={16}>Humidity: {currentWeather?.humidity}</Text>
+          </Row>
+          <House height={180} />
 
-      <Informations data={weatherInfoWeekDay} />
+          <Informations data={weatherInfoWeekDay} />
+        </>
+      )}
     </Container>
   );
 };
