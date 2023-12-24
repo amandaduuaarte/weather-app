@@ -22,12 +22,5 @@ export interface CurrentWeatherDay {
       morn: number;
       night: number;
     };
-    feels_like: number;
-    visibility: number;
-    humidity: number;
-    weather: {
-      description: string;
-      main: string;
-    }[];
   }[];
 }
