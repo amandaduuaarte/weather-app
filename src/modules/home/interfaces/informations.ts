@@ -4,19 +4,18 @@ export interface InformationsProps {
 }
 
 export interface CurrentWeather {
-  clouds: number;
-  temp: number;
-  feels_like: number;
-  visibility: number;
-  humidity: number;
-  weather: {
-    description: string;
-    main: string;
-  }[];
-}
-
-export interface CurrentWeatherDay {
-  data: {
+  current: {
+    clouds: number;
+    temp: number;
+    feels_like: number;
+    visibility: number;
+    humidity: number;
+    weather: {
+      description: string;
+      main: string;
+    }[];
+  };
+  daily: {
     clouds: number;
     temp: {
       morn: number;
