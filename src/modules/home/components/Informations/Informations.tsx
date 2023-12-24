@@ -21,11 +21,18 @@ export const Informations: React.FC = () => {
       hour: 18,
     },
   ];
+
+  const CurrentDate = new Date();
+  const CurrentDay = CurrentDate.getDate();
+  const CurrentMonth = CurrentDate.getMonth() + 1;
+
   return (
     <Container>
       <Row>
         <Text>Today</Text>
-        <Text>July, 21</Text>
+        <Text>
+          {CurrentDay}/{CurrentMonth}
+        </Text>
       </Row>
       <Header />
       <Row>

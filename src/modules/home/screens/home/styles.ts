@@ -22,5 +22,5 @@ export const Text = styled.Text<TextProps>`
 export const Row = styled.View`
   flex-flow: row;
   gap: 24px;
-  margin-bottom: 24px;
+  margin: 10px 0 24px 0;
 `;
