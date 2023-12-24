@@ -20,7 +20,6 @@ const LocationProvider: React.FC<ChildrenDefaultProps> = ({children}) => {
           lat: coords?.latitude,
           lon: coords?.longitude,
         });
-        console.log(position);
       },
       error => {
         // See error code charts below.
@@ -39,7 +38,6 @@ const LocationProvider: React.FC<ChildrenDefaultProps> = ({children}) => {
       ).then(result => {
         if (result === 'granted') {
           getLocation();
-          console.log('You can use Geolocation');
           return true;
         }
       });
