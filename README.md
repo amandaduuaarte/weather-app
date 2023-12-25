@@ -1,79 +1,62 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-# Getting Started
+🇺🇸 [English](./README_ENGLISH.md)
+<div align="center">
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="ReactJS"> 
+<h2 align="center">Weather App: </h2>
+</div>
+Este é um aplicativo móvel desenvolvido em React Native que utiliza o lib React-query para lidar com o tratamento dos dados das requisições. Além do projeto ter sido criado para que pudesse ter um conhecimento maior sobre as funcionalidades do react-query ele também possui uma arquitetura de pastas em um estilo modular. ou seja
+usando `modules`, tornando a aplicação mais fácil de ser escalada já que temos partes independentes.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Sobre o projeto: 
 
-## Step 1: Start the Metro Server
+<div align="center">
+<img src="https://github.com/amandaduuaarte/weather-app/blob/develop/onboarding.png" alt="onboardingScreen" height="400px"> 
+   <img src="https://github.com/amandaduuaarte/weather-app/blob/develop/permitions.png" alt="permitionsScreen" height="400px">
+   <img src="https://github.com/amandaduuaarte/weather-app/blob/develop/home.png" alt="homeScreen" height="400px"> 
+<p align="center">Screens</p>
+</div>
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Configuração
+- Pré-requisitos
+    * Node.js
+    * npm ou Yarn
+    * Dispositivo móvel ou emulador configurado para execução do aplicativo
+- Instalação
+    * Clone este repositório: git clone [weather-app](https://github.com/amandaduuaarte/weather-app)
+    * Acesse o diretório do projeto: cd nome-do-repositorio
+    * Instale as dependências: npm install ou yarn install
+    * Executando a aplicação
+    * Para executar o aplicativo, utilize os seguintes comandos:
 
-To start Metro, run the following command from the _root_ of your React Native project:
+- iOS:
+    * `npx react-native run-ios`
 
-```bash
-# using npm
-npm start
+- Android:
+    * `npx react-native run-android`
+ 
+  
+### Funcionalidades
+- Personagens
+    * Caputurar geolocalização do dispositivo.
+    * Apresentar informações sobre o tempo de acordo com a localização.
+    * Solicitar permissão para acesso a localização.
 
-# OR using Yarn
-yarn start
-```
+### Estão sendo implementadas: 
+   * 
 
-## Step 2: Start your Application
+### Tecnologias Utilizadas
+  * React Native
+  * React-Query tratamento dos dados das requisições
+  * Styled Components para estilização  
+  * React Navigation para navegação entre telas
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+### Estrutura do projeto e decisoes tomadas:
+[Estrutura](./STRUCTURE.md) aqui temos um compilado de informações que server como facilitador para quem deseja enteder a estrutura de pastas do projeto e algumas breves explicações de decisões tomadas durante o desenvolvimento.
 
-### For Android
+### Contribuição
+Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request para melhorias no código, novas funcionalidades ou correções de bugs.
 
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Autores
+Seu Nome (@amandaduuaarte)
+Licença
+Este projeto está sob a licença [MIT].
