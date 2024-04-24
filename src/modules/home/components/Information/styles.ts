@@ -13,7 +13,7 @@ export const Container = styled.View`
   padding: 24px;
 `;
 
-export const Header = styled.View`
+export const Divider = styled.View`
   height: 1px;
   width: 100%;
   background: ${colors.backgrounds.white};
@@ -35,7 +35,6 @@ export const Row = styled.View`
 
 export const TempCard = styled.View`
   margin-top: 12px;
-  width: 10%;
   justify-content: center;
   align-items: center;
 `;

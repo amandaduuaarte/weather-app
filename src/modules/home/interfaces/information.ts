@@ -1,4 +1,4 @@
-export interface InformationsProps {
+export interface InformationProps {
   temp: string;
   hour: number;
 }

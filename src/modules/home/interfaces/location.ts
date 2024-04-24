@@ -5,7 +5,7 @@ export interface LocationData {
     lat: number;
     lon: number;
   };
-  permitions: string;
+  permissions: string;
   setLocation: Dispatch<SetStateAction<{lat: number; lon: number}>>;
   getLocation: () => void;
   requestLocationPermission: () => void;

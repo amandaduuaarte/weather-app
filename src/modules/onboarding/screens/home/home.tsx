@@ -7,6 +7,7 @@ import {useNavigation} from '../../../../hooks/useNavigation';
 
 export const Home: React.FC = () => {
   const navigation = useNavigation();
+
   return (
     <Container>
       <Logo />

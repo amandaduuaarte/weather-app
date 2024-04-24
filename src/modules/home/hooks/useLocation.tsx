@@ -7,7 +7,7 @@ import {Platform} from 'react-native';
 
 const LocationContext = createContext<LocationData>({} as LocationData);
 const LocationProvider: React.FC<ChildrenDefaultProps> = ({children}) => {
-  const [permitions, setPermissions] = useState('');
+  const [permissions, setPermissions] = useState('');
   const [location, setLocation] = useState({
     lat: 0,
     lon: 0,
@@ -56,7 +56,7 @@ const LocationProvider: React.FC<ChildrenDefaultProps> = ({children}) => {
         setLocation,
         getLocation,
         requestLocationPermission,
-        permitions,
+        permissions,
       }}>
       {children}
     </LocationContext.Provider>

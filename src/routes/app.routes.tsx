@@ -6,6 +6,7 @@ import {HomeRoutes} from '../modules/home/routes/home.routes';
 
 export const Routes: React.FC = () => {
   const AppRoutes = createNativeStackNavigator();
+
   return (
     <NavigationContainer>
       <AppRoutes.Navigator

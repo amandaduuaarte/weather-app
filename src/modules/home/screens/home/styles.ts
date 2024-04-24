@@ -6,9 +6,12 @@ interface TextProps {
   size?: number;
 }
 
-export const Container = styled.View`
+export const Container = styled.ScrollView`
   flex: 1;
   background: ${colors.backgrounds.primaryDark};
+`;
+
+export const Content = styled.View`
   justify-content: center;
   align-items: center;
 `;
